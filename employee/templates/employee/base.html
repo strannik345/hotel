@@ -1,0 +1,24 @@
+{%  load static %}
+
+<!DOCTYPE html>
+<html>
+<head>	
+	{% block title %}{% endblock %}
+	<link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+	<script src="{% static 'base.js' %}"></script>
+</head>
+<body>
+	<span class="leftMenu" onclick="openNav()">&#9776; menu</span>	
+	<div id="main">		
+		{% block content %}{% endblock %}		
+		<div id="backSideMenu"></div>
+		<div id="sideMenu" class="sideMenu">
+				<a href="#" class="closebtn" onclick="closeNav()">&times;</a>
+				<a href="/">Домой</a>
+				<a href="/booking">Бронирование</a>
+				<a href="/employee">Добавление сотрудников</a>
+				<a href="/floorView">Вид этажей</a>			
+		</div>	
+	</div>
+</body>
+</html>

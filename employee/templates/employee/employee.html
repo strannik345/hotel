@@ -1,0 +1,31 @@
+{%  load static %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Должности</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="{% static 'employee/reset.css' %}">
+	<link rel="stylesheet" href="{% static 'employee/employee.css' %}">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.js"  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="  crossorigin="anonymous"></script>
+	<script  src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="  crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'jquery-ui.css' %}">
+  	<script src="{% static 'employee/script.js' %}"></script>	
+
+</head>
+<body>
+	<div class="main">
+		<form action="#" method="post" autocomplete="off" class="container_form_left" id="form">
+			{% csrf_token  %}
+			{% for f in form %}			
+				<div>{{f.label_tag}}{{f}}</div>										
+				
+			{% endfor %}
+			<input type="submit" name="submit_employee" class="btn" value="Добавить сотрудника">
+		</form>
+	</div>
+
+</body>
+</html>
